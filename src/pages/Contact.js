@@ -5,6 +5,7 @@ import Logo from "../components/Logo";
 import ContactForm from "../components/ContactForm";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import SocialNetworks from "../components/SocialNetworks";
+import Buttons from "../components/Buttons";
 
 const Contact = () => {
   return (
@@ -55,6 +56,7 @@ const Contact = () => {
             Jean-Yves B. - 2022
           </div>
         </div>
+        <Buttons left="/projet-4" />
       </div>
     </main>
   );
