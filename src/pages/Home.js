@@ -15,14 +15,13 @@ const Home = () => {
     },
     visible: {
       opacity: 1,
-      x:0,
+      x: 0,
     },
     exit: {
       opacity: 0,
-      transition: {duration: 0.3},
+      transition: { duration: 0.3 },
       x: -100,
-
-    }
+    },
   };
   return (
     <div>
@@ -38,7 +37,17 @@ const Home = () => {
         <SocialNetworks />
         <div className="home-main">
           <div className="main-content">
-            <motion.h1 animate={{ rotate: 360 }} transition={{ duration: 2 }}>
+            <motion.h1
+              drag
+              onDragEnd
+              dragConstraints={{
+                left: -250,
+
+                right: 950,
+                top: -200,
+                bottom: 250,
+              }}
+            >
               FS AGENCY
             </motion.h1>
             <h2>

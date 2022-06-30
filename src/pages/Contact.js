@@ -6,12 +6,30 @@ import ContactForm from "../components/ContactForm";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import SocialNetworks from "../components/SocialNetworks";
 import Buttons from "../components/Buttons";
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  const pageTransition = {
+    in: {
+      opacity: 1,
+      x: 0,
+    },
+    out: {
+      opcity: 0,
+      x: 200,
+    },
+  };
+
   return (
     <main>
       <Mouse />
-      <div className="contact">
+      <motion.div
+        initial="out"
+        animate="in"
+        variants={pageTransition}
+        transition = {{duration: 0.4}}
+        className="contact"
+      >
         <Navigation />
         <Logo />
         <ContactForm />
@@ -52,12 +70,10 @@ const Contact = () => {
             </div>
           </div>
           <SocialNetworks />
-          <div className="credits">
-            Jean-Yves B. - 2022
-          </div>
+          <div className="credits">Jean-Yves B. - 2022</div>
         </div>
         <Buttons left="/projet-4" />
-      </div>
+      </motion.div>
     </main>
   );
 };
